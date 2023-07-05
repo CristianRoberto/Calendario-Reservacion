@@ -1,0 +1,36 @@
+# Laravel specific
+.env
+.env.*
+public/storage
+public/hot
+storage/*.key
+/vendor
+/node_modules
+
+# IDEs and editors
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Logs and caches
+/logs/
+/bootstrap/cache/
+
+# Laravel Mix
+/public/css/
+/public/js/
+/public/mix-manifest.json
+/mix-manifest.json
+
+# Testing specific
+/phpunit.xml
+/tests/
+
+# Application-specific files
+/public/uploads/
+/public/avatars/

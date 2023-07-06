@@ -29,7 +29,6 @@
 
 <body class="antialiased">
     <div style="display: flex; justify-content: center; align-items: center; height: 100vh; ">
-
         <button class="custom-button" onclick="window.location.href='/evento'">
             Agendamiento de Citas
         </button>

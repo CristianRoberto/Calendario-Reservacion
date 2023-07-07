@@ -42,7 +42,7 @@
             </div>
             <div class="modal-body">
                 <!-- creacion del formulario que va dentro del modal -->
-                <form action="http://localhost:8000/evento/agregar" method="POST">
+                <form action="" >
                 {!! csrf_field() !!}
                     <div class="form-group">
                         <label for="id">ID</label>

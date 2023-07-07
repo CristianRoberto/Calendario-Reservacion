@@ -65,7 +65,7 @@ class EventoController extends Controller
      */
     public function edit($id)
     {
-        //
+        //Que el evento me consulte los datos por id
         $evento=Evento::find($id);
 
         $evento->start= Carbon::createFromFormat('Y-m-d H:i:s', $evento->start)->format('Y-m-d');
@@ -73,7 +73,7 @@ class EventoController extends Controller
         $evento->end= Carbon::createFromFormat('Y-m-d H:i:s', $evento->end)->format('Y-m-d');
 
 
-        return response()->json($evento);
+        return response()->json($evento);//me muestra la respuesta de los datos del evento
 
     }
 
@@ -96,8 +96,11 @@ class EventoController extends Controller
      * @param  \App\Models\Evento  $evento
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Evento $evento)
+    public function destroy($id)
     {
         //
+        $evento=Evento::find($id)->delete();
+        return response()->json($evento);
+
     }
 }

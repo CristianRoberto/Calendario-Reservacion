@@ -13,8 +13,16 @@ class CreateEventosTable extends Migration
      */
     public function up()
     {
+
+        //crea una nueva tabla llamada eventos con los parametros
         Schema::create('eventos', function (Blueprint $table) {
             $table->id();
+            $table->string("title", 255);
+            $table->text("descripcion");
+
+            $table->dateTime("start");
+            $table->dateTime("end");
+
             $table->timestamps();
         });
     }

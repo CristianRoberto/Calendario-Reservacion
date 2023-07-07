@@ -37,7 +37,10 @@ class EventoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //aplica la validacion al request, validamos que toda la informacion sea correcta
+        request()->validate(Evento::$rules);
+        $evento=Evento::create($request->all());
+        
     }
 
     /**
@@ -48,7 +51,9 @@ class EventoController extends Controller
      */
     public function show(Evento $evento)
     {
-        //
+        //consulta todo los datos de la base datos
+        $evento=Evento::all();//accediendo a los registros
+        return response()->json($evento); //devolviendo el registro
     }
 
     /**

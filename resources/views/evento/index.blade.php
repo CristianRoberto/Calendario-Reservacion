@@ -7,9 +7,28 @@
     </div>
 </div>
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#evento">
-    Launch
+ <!-- stylo boton modal -->
+<style>
+    .custom-button {
+  display: block;
+  margin: 0 auto;
+  background-color: #007bff;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.custom-button:hover {
+  background-color: #023d7d;
+  color: yellow;
+}
+
+</style>
+
+
+<button type="button" class="btn btn-primary btn-lg custom-button" data-toggle="modal" data-target="#evento">
+    Modal Abrir
 </button>
+
 
 <!-- Modal -->
 <div class="modal fade" id="evento" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
@@ -22,17 +41,14 @@
                 </button>
             </div>
             <div class="modal-body">
-
-                <form action="">
-
-
+                <!-- creacion del formulario que va dentro del modal -->
+                <form action="http://localhost:8000/evento/agregar" method="POST">
+                {!! csrf_field() !!}
                     <div class="form-group">
                         <label for="id">ID</label>
                         <input type="text" class="form-control" name="id" id="id" aria-describedby="helpId" placeholder="">
                         <small id="helpId" class="form-text text-muted">Help text</small>
                     </div>
-
-
                     <div class="form-group">
                         <label for="title">titulo</label>
                         <input type="text" class="form-control" name="title" id="title" aria-describedby="helpId" placeholder="escribe titulo">
@@ -43,8 +59,6 @@
                         <label for="descripcion">Descripcion</label>
                         <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
                     </div>
-
-
                     <div class="form-group">
                         <label for="start">start</label>
                         <input type="text" class="form-control" name="start" id="start" aria-describedby="helpId" placeholder="">
@@ -56,17 +70,13 @@
                         <input type="text" class="form-control" name="end" id="end" aria-describedby="helpId" placeholder="">
                         <small id="helpId" class="form-text text-muted">Help text</small>
                     </div>
-
-
                 </form>
-
-
-
-                Body
             </div>
             <div class="modal-footer">
+                <button type="button" class="btn btn-success" id="btnGuardar">Guardar</button>
+                <button type="button" class="btn btn-warning" id="btnModificar">Modificar</button>
+                <button type="button" class="btn btn-danger" id="btnEliminar">Eliminar</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save</button>
             </div>
         </div>
     </div>

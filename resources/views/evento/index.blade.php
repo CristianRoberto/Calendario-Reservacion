@@ -3,31 +3,35 @@
 
 <div class="container">
     <div id="agenda">
-        Calendario
+        <h1 style="text-align: center;         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ ">Calendario</h1>
     </div>
 </div>
 <!-- Button trigger modal -->
- <!-- stylo boton modal -->
+<!-- stylo boton modal -->
 <style>
     .custom-button {
-  display: block;
-  margin: 0 auto;
-  background-color: #007bff;
-  color: #fff;
-  transition: background-color 0.3s;
-}
+        display: block;
+        margin: 0 auto;
+        background-color: #007bff;
+        color: #fff;
+        transition: background-color 0.3s;
+    }
 
-.custom-button:hover {
-  background-color: #023d7d;
-  color: yellow;
+    .custom-button:hover {
+        background-color: #023d7d;
+        color: yellow;
+    }
+    .hidden {
+  display: none;
 }
-
 </style>
 
 
-<button type="button" class="btn btn-primary btn-lg custom-button" data-toggle="modal" data-target="#evento">
+<button type="button" class="btn btn-primary btn-lg custom-button hidden" data-toggle="modal" data-target="#evento">
     Modal Abrir
 </button>
+
 
 
 <!-- Modal -->
@@ -42,8 +46,8 @@
             </div>
             <div class="modal-body">
                 <!-- creacion del formulario que va dentro del modal -->
-                <form action="" >
-                {!! csrf_field() !!}
+                <form action="">
+                    {!! csrf_field() !!}
                     <div class="form-group">
                         <label for="id">ID</label>
                         <input type="text" class="form-control" name="id" id="id" aria-describedby="helpId" placeholder="">

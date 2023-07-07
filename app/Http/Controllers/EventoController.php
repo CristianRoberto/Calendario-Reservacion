@@ -88,6 +88,9 @@ class EventoController extends Controller
     public function update(Request $request, Evento $evento)
     {
         //
+        request()->validate(Evento::$rules);//aqui validamos
+        $evento->update($request->all());//hacemos la aptualizacion
+        return response()->json($evento);//mandamos los datos que salgan en un formato Json
     }
 
     /**

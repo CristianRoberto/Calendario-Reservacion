@@ -48,7 +48,7 @@
                 <!-- creacion del formulario que va dentro del modal -->
                 <form action="">
                     {!! csrf_field() !!}
-                    <div class="form-group">
+                    <div class="form-group d-none">
                         <label for="id">ID</label>
                         <input type="text" class="form-control" name="id" id="id" aria-describedby="helpId" placeholder="">
                         <small id="helpId" class="form-text text-muted">Help text</small>
@@ -63,13 +63,13 @@
                         <label for="descripcion">Descripcion</label>
                         <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group d-none" >
                         <label for="start">start</label>
                         <input type="date" class="form-control" name="start" id="start" aria-describedby="helpId" placeholder="">
                         <small id="helpId" class="form-text text-muted">Help text</small>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group d-none"> 
                         <label for="end">end</label>
                         <input type="date" class="form-control" name="end" id="end" aria-describedby="helpId" placeholder="">
                         <small id="helpId" class="form-text text-muted">Help text</small>

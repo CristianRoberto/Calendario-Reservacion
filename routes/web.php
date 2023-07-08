@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,18 +18,25 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware("auth");
 
 Auth::routes();
 
-Route::get('/evento', [App\Http\Controllers\EventoController::class, 'index']);
-Route::get('/evento/mostrar', [App\Http\Controllers\EventoController::class, 'show']);
+Route::group(['middleware' => ['auth']], function(){
 
+Route::get('/evento', [App\Http\Controllers\EventoController::class, 'index']);
+Route::post('/evento/mostrar', [App\Http\Controllers\EventoController::class, 'show']);
 Route::post('/evento/agregar', [App\Http\Controllers\EventoController::class, 'store']);
 Route::post('/evento/editar/{id}', [App\Http\Controllers\EventoController::class, 'edit']);
 Route::post('/evento/actualizar/{evento}', [App\Http\Controllers\EventoController::class, 'update']);
-
 Route::post('/evento/borrar/{id}', [App\Http\Controllers\EventoController::class, 'destroy']);
 
+//Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout')->middleware('web');
+Route::post('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+});
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

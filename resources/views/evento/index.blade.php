@@ -38,7 +38,8 @@
             </div>
             <div class="modal-body">
                 <!-- creacion del formulario que va dentro del modal -->
-                <form action=""  id="formularioEventos"   >
+                <form id="formularioEventos">
+
                     {!! csrf_field() !!}
 
                     <div class="form-group d-none">
@@ -56,24 +57,23 @@
                         <label for="descripcion">Descripcion</label>
                         <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
                     </div>
-                    <div class="form-group d-none" >
+                    <div class="form-group" >
                         <label for="start">start</label>
                         <input type="date" class="form-control" name="start" id="start" aria-describedby="helpId" placeholder="">
                         <small id="helpId" class="form-text text-muted">Help text</small>
                     </div>
 
-                    <div class="form-group d-none"> 
-                        <label for="end">end</label>
-                        <input type="date" class="form-control" name="end" id="end" aria-describedby="helpId" placeholder="">
-                        <small id="helpId" class="form-text text-muted">Help text</small>
-                    </div>
+                    <div class="form-group">
+  <label for="hora">Hora</label>
+  <input type="time" class="form-control" name="hora" id="hora" aria-describedby="helpId" placeholder="">
+  <small id="helpId" class="form-text text-muted">Help text</small>
+</div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-success" id="btnGuardar">Guardar</button>
                 <button type="button" class="btn btn-warning" id="btnModificar">Modificar</button>
                 <button type="button" class="btn btn-danger" id="btnEliminar">Eliminar</button>
-                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
             </div>

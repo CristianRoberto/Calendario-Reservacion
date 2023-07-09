@@ -14,10 +14,10 @@ class Evento extends Model
         'title'=>'required',
         'descripcion'=>'required',
         'start'=>'required',
-        'end'=>'required'
+        'hora'=>'hora'
     ];
     //nos permite utilizar los campos del formulario
-    protected $fillable = ['title','descripcion','start','end'];
+    protected $fillable = ['title','descripcion','start','hora'];
 }
 
 

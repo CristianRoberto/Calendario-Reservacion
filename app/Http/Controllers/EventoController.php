@@ -65,17 +65,23 @@ class EventoController extends Controller
      */
     public function edit($id)
     {
-        //Que el evento me consulte los datos por id
-        $evento=Evento::find($id);
+        // Obtener el evento por su ID
+        $evento = Evento::find($id);
+    
+        // Formatear la fecha y hora en el campo start
+        $evento->start = Carbon::createFromFormat('Y-m-d H:i:s', $evento->start)->format('Y-m-d H:i');
+    
+        // Formatear el campo hora
+        $evento->hora = Carbon::parse($evento->hora)->format('H:i');
 
-        $evento->start= Carbon::createFromFormat('Y-m-d H:i:s', $evento->start)->format('Y-m-d');
 
-        $evento->end= Carbon::createFromFormat('Y-m-d H:i:s', $evento->end)->format('Y-m-d');
-
-
-        return response()->json($evento);//me muestra la respuesta de los datos del evento
-
+        return response()->json($evento);
     }
+
+
+
+
+    
 
     /**
      * Update the specified resource in storage.

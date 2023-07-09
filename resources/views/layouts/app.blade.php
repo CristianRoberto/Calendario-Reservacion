@@ -30,6 +30,8 @@
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.main.min.js'></script>
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/locales-all.js'></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
     <script>
         var baseURL = <?php echo json_encode(url('/')); ?>;
     </script>
@@ -92,6 +94,7 @@
         </nav>
 
         <!-- Scripts Principal donde se carga de forma general los JavaScripts -->
+
         <script src="{{ asset('js/agenda.js') }}" type="module" defer></script>
 
         <main class="py-4">

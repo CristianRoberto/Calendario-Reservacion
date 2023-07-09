@@ -19,13 +19,13 @@ class CreateEventosTable extends Migration
             $table->id();
             $table->string("title", 255);
             $table->text("descripcion");
-
+        
             $table->dateTime("start");
-            $table->dateTime("end");
-
+            $table->time("hora"); // Cambio de nombre y tipo de dato
+        
             $table->timestamps();
         });
-    }
+    }        
 
     /**
      * Reverse the migrations.
